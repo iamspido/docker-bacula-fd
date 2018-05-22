@@ -5,12 +5,8 @@ MAINTAINER Timo Hohmann <t.hohmann@raphael-gmbh.de>
 RUN apt update \
 	&& apt install -y \
 	bacula-fd \
-	supervisor \
 	nano
-
-COPY assets/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY start.sh /start.sh
 
 EXPOSE 9102
 
-CMD ["bash", "/start.sh"]
+CMD ["/usr/sbin/bacula-fd"]
