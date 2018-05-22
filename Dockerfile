@@ -9,6 +9,7 @@ RUN apt update \
 	nano
 
 COPY assets/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY start.sh /start.sh
 
 EXPOSE 9102
 
