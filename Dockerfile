@@ -6,6 +6,8 @@ RUN apt update \
 	&& apt install -y \
 	bacula-fd \
 	nano
+	
+RUN mkdir /var/run/bacula
 
 EXPOSE 9102
 
