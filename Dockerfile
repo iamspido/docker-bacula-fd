@@ -9,4 +9,4 @@ RUN apt update \
 
 EXPOSE 9102
 
-CMD ["/usr/sbin/bacula-fd"]
+CMD ["/etc/init.d/bacula-fd"]
