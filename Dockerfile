@@ -10,6 +10,8 @@ RUN apt update \
 	
 RUN mkdir /var/run/bacula
 
+COPY mysqldump.sh mysqldump.sh
+
 EXPOSE 9102
 
 CMD ["/usr/sbin/bacula-fd", "-f"]
