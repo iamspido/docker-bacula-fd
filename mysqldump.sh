@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BACKUP_DIR="/var/backups/mysql/"
+BACKUP_DIR="/mount/var/backups/mysql/"
 MYSQL_USER="${2:-root}"
 MYSQL=/usr/bin/mysql
 MYSQL_PASSWORD="${1}"
