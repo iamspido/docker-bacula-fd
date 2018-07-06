@@ -6,6 +6,7 @@ RUN apt update \
 	&& apt install -y \
 	bacula-fd \
 	nano \
+	bzip2 \
 	mysql-client
 	
 RUN mkdir /var/run/bacula
