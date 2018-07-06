@@ -10,7 +10,7 @@ RUN apt update \
 	
 RUN mkdir /var/run/bacula
 
-COPY mysqldump.sh mysqldump.sh
+COPY mysqldump.sh /root/mysqldump.sh
 
 EXPOSE 9102
 
