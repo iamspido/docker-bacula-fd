@@ -1,9 +1,9 @@
 #!/bin/bash
 
 BACKUP_DIR="/mount/var/backups/mysql/"
-MYSQL_USER="${2:-root}"
+MYSQL_USER='root'
 MYSQL=/usr/bin/mysql
-MYSQL_PASSWORD="${1}"
+MYSQL_PASSWORD="${MYSQL_PASSWORD}"
 MYSQLDUMP=/usr/bin/mysqldump
 
 databases=`$MYSQL --user=$MYSQL_USER -p$MYSQL_PASSWORD --protocol=socket -S /var/run/mysqld/mysqld.sock -e "SHOW DATABASES;" | grep -Ev "(Database|information_schema|performance_schema)"`
