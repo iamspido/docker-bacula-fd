@@ -10,6 +10,7 @@ RUN apt update \
 	mysql-client
 	
 RUN mkdir /var/run/bacula
+RUN mkdir /var/run/mysqld
 
 COPY mysqldump.sh /root/mysqldump.sh
 
