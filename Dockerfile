@@ -11,7 +11,10 @@ RUN mkdir /var/run/bacula
 RUN mkdir /var/run/mysqld
 
 COPY mysqldump.sh /root/mysqldump.sh
+COPY assets/bacula-fd.conf /etc/bacula/bacula-fd.conf
+COPY start.sh start.sh
+RUN chmod +x /start.sh
 
 EXPOSE 9102
 
-CMD ["/usr/sbin/bacula-fd", "-f"]
+CMD ["/start.sh"]
