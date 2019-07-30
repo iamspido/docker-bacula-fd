@@ -11,6 +11,7 @@ RUN mkdir /var/run/bacula
 RUN mkdir /var/run/mysqld
 
 COPY mysqldump.sh /root/mysqldump.sh
+COPY ext-mysqldump.sh /root/ext-mysqldump.sh
 COPY assets/bacula-fd.conf /etc/bacula/bacula-fd.conf
 COPY start.sh start.sh
 RUN chmod +x /start.sh
