@@ -12,8 +12,6 @@ databases=`${ENV_MYSQL} --user=${ENV_MYSQL_USER} -p${ENV_MYSQL_PASSWORD} --host=
 
 for db in $databases; do
 	if [[ ! $db = "mysql" && ! $db = "sys" ]]; then
-		${ENV_MYSQLDUMP} --force --opt --user=${ENV_MYSQL_USER} -p${ENV_MYSQL_PASSWORD} --quote-names --host=${ENV_MYSQL_HOST} \
-		--port=${ENV_MYSQL_PORT} --single-transaction --ignore-table=mysql.event --quick --max_allowed_packet=512M --databases $db \
-		| bzip2 > "${ENV_BACKUP_DIR}/$db.bz2"
+		${ENV_MYSQLDUMP} --force --opt --user=${ENV_MYSQL_USER} -p${ENV_MYSQL_PASSWORD} --quote-names --host=${ENV_MYSQL_HOST} --port=${ENV_MYSQL_PORT} --single-transaction --ignore-table=mysql.event --quick --max_allowed_packet=512M --databases $db | bzip2 > "${ENV_BACKUP_DIR}/$db.bz2"
 	fi
 done
